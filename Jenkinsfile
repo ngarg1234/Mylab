@@ -34,25 +34,23 @@ pipeline{
         stage ("Publish to Nexus") {
             steps{
 
-             //   nexusArtifactUploader artifacts: [[artifactId: 'VinayDevOpsLab', classifier: '', file: 'target/VinayDevOpsLab-0.0.3-SNAPSHOT.war', type: 'war']], credentialsId: '26772ecb-ffeb-4e5c-b252-fdce79ec1791', groupId: 'com.vinaysdevopslab', nexusUrl: '13.127.180.184:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'VinayDevopsLab-SNAPSHOT', version: '0.0.3-SNAPSHOT' 
+                 script {
 
-                 //script {
-
-                //def NexusRepo = Version.endsWith("SNAPSHOT") ? "VinayDevOpsLab-SNAPSHOT" : "VinayDevOpsLab-RELEASE"
+                def NexusRepo = Version.endsWith("SNAPSHOT") ? "VinaysDevopsLab-SNAPSHOT" : "VinaysDevopsLab-RELEASE"
 
                 nexusArtifactUploader artifacts: 
-                [[artifactId: 'VinayDevOpsLab', 
+                [[artifactId: "${ArtifactId}", 
                 classifier: '', 
-                file: 'target/VinayDevOpsLab-0.0.3-SNAPSHOT.war', 
+                file: "target/${ArtifactId}-${Version}.war", 
                 type: 'war']], 
                 credentialsId: '26772ecb-ffeb-4e5c-b252-fdce79ec1791', 
-                groupId: 'com.vinaysdevopslab', 
+                groupId: "${GroupId}", 
                 nexusUrl: '13.127.180.184:8081', 
                 nexusVersion: 'nexus3', 
                 protocol: 'http', 
-                repository: 'VinayDevOpsLab-SNAPSHOT', 
-                version: '0.0.3-SNAPSHOT'
-             //}
+                repository: "${NexusRepo}", 
+                version: "${Version}"
+             }
 
             }
         }
