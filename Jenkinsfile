@@ -51,7 +51,7 @@ pipeline{
                 nexusVersion: 'nexus3', 
                 protocol: 'http', 
                 repository: "VinayDevOpsLab-SNAPSHOT", 
-                version: "0.0.3-SNAPSHOT"
+                version: '0.0.3-SNAPSHOT'
              //}
 
             }
