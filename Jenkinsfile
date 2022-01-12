@@ -41,7 +41,7 @@ pipeline{
                 nexusArtifactUploader artifacts: 
                 [[artifactId: "${ArtifactId}", 
                 classifier: '', 
-                file: "target/${ArtifactId}-0.0.3.war", 
+                file: "target/${ArtifactId}-${Version}.war", 
                 type: 'war']], 
                 credentialsId: '26772ecb-ffeb-4e5c-b252-fdce79ec1791', 
                 groupId: "${GroupId}", 
@@ -49,7 +49,7 @@ pipeline{
                 nexusVersion: 'nexus3', 
                 protocol: 'http', 
                 repository: "${NexusRepo}", 
-                version: "${Version}"
+                version: "0.0.3"
              }
 
             }
