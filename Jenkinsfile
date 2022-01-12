@@ -41,12 +41,12 @@ pipeline{
                 def NexusRepo = Version.endsWith("SNAPSHOT") ? "VinayDevOpsLab-SNAPSHOT" : "VinayDevOpsLab-RELEASE"
 
                 nexusArtifactUploader artifacts: 
-                [[artifactId: "${ArtifactId}", 
+                [[artifactId: "VinayDevOpsLab", 
                 classifier: '', 
-                file: "target/${ArtifactId}-${Version}.war", 
+                file: "target/VinayDevOpsLab-0.0.3-SNAPSHOT.war.war", 
                 type: 'war']], 
                 credentialsId: '26772ecb-ffeb-4e5c-b252-fdce79ec1791', 
-                groupId: "${GroupId}", 
+                groupId: "com.vinaysdevopslab", 
                 nexusUrl: '13.127.180.184:8081', 
                 nexusVersion: 'nexus3', 
                 protocol: 'http', 
