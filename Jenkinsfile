@@ -36,7 +36,7 @@ pipeline{
 
                  script {
 
-                def NexusRepo = Version.endsWith("SNAPSHOT") ? "VinaysDevOpsLab-SNAPSHOT" : "VinaysDevOpsLab-RELEASE"
+                def NexusRepo = Version.endsWith("SNAPSHOT") ? "VinayDevOpsLab-SNAPSHOT" : "VinayDevOpsLab-RELEASE"
 
                 nexusArtifactUploader artifacts: 
                 [[artifactId: "${ArtifactId}", 
@@ -51,7 +51,7 @@ pipeline{
                 repository: "${NexusRepo}", 
                 version: "${Version}"
              }
-             
+
             }
         }
 
