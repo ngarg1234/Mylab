@@ -31,26 +31,26 @@ pipeline{
         }
 
         // Publish your Artifact to Nexus
-        stage ("Publish to Nexus") {
+        stage ('Publish to Nexus') {
             steps{
 
              //   nexusArtifactUploader artifacts: [[artifactId: 'VinayDevOpsLab', classifier: '', file: 'target/VinayDevOpsLab-0.0.3-SNAPSHOT.war', type: 'war']], credentialsId: '26772ecb-ffeb-4e5c-b252-fdce79ec1791', groupId: 'com.vinaysdevopslab', nexusUrl: '13.127.180.184:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'VinayDevopsLab-SNAPSHOT', version: '0.0.3-SNAPSHOT' 
 
                  //script {
 
-                //def NexusRepo = Version.endsWith("SNAPSHOT") ? "VinayDevOpsLab-SNAPSHOT" : "VinayDevOpsLab-RELEASE"
+                //def NexusRepo = Version.endsWith('SNAPSHOT') ? 'VinayDevOpsLab-SNAPSHOT' : 'VinayDevOpsLab-RELEASE'
 
                 nexusArtifactUploader artifacts: 
-                [[artifactId: "VinayDevOpsLab", 
+                [[artifactId: 'VinayDevOpsLab', 
                 classifier: '', 
-                file: "target/VinayDevOpsLab-0.0.3-SNAPSHOT.war", 
+                file: 'target/VinayDevOpsLab-0.0.3-SNAPSHOT.war', 
                 type: 'war']], 
                 credentialsId: '26772ecb-ffeb-4e5c-b252-fdce79ec1791', 
-                groupId: "com.vinaysdevopslab", 
+                groupId: 'com.vinaysdevopslab', 
                 nexusUrl: '13.127.180.184:8081', 
                 nexusVersion: 'nexus3', 
                 protocol: 'http', 
-                repository: "VinayDevOpsLab-SNAPSHOT", 
+                repository: 'VinayDevOpsLab-SNAPSHOT', 
                 version: '0.0.3-SNAPSHOT'
              //}
 
@@ -60,10 +60,10 @@ pipeline{
          // Stage 4 : Print some information
         stage ('Print Environment variables'){
                     steps {
-                        echo "Artifact ID is '${ArtifactId}'"
-                        echo "Version is '${Version}'"
-                        echo "GroupID is '${GroupId}'"
-                        echo "Name is '${Name}'"
+                        echo 'Artifact ID is '${ArtifactId}''
+                        echo 'Version is '${Version}''
+                        echo 'GroupID is '${GroupId}''
+                        echo 'Name is '${Name}''
                     }
                 }
 
