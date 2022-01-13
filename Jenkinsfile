@@ -31,7 +31,7 @@ pipeline{
         }
 
         // Publish your Artifact to Nexus
-        stage ("Publish to Nexuss") {
+        stage ("Publish to Nexus") {
             steps{
 
                  script {
